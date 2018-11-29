@@ -52,9 +52,19 @@ void Reset() {
   
   points.clear();
   
-  for (int i=0; i<NUMBER_OF_POINTS; i++) {
-    points.add(new Point(random(width), random(height)));
+  //for (int i=0; i<NUMBER_OF_POINTS; i++) {
+  //  points.add(new Point(random(width), random(height)));
+  //}
+
+for (int i = 0; i < NUMBER_OF_POINTS; i++) {
+    // let v = createVector(random(width), random(height));
+    int angle = i * TWO_PI / NUMBER_OF_POINTS;
+    PVector v = PVector.fromAngle(angle);
+    v.mult(width / 2);
+    v.add(width / 2, height / 2);
+    points.add(v);
   }
+
 
   stroke(255, 0, 255);
   strokeWeight(7);
@@ -68,4 +78,11 @@ void Reset() {
   currentY= (int) random(height);
 
   point(currentX, currentY);
+  
+  stroke(255,255,0);
+  strokeWeight(8);
+  //point(width/2,height/2);
+  strokeWeight(3);
+  stroke(0,255,0);
+ 
 }

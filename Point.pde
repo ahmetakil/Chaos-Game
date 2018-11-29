@@ -1,5 +1,5 @@
-class Point{
-  
+class Point extends PVector{
+
   float x;
   float y;
   
